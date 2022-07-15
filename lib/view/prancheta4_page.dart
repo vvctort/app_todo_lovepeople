@@ -8,7 +8,7 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  List<String> lista = ['pato', 'gato'];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,29 +49,33 @@ class _ListPageState extends State<ListPage> {
               height: 40,
             ),
             Container(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 14),
               margin: const EdgeInsets.symmetric(horizontal: 20),
               height: 50,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(14),
               ),
               child: TextField(
                 decoration: InputDecoration(
+                  iconColor: const Color.fromARGB(255, 49, 1, 185),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 49, 1, 185)),
                   labelText: 'Busque palavras-chave',
                   border: InputBorder.none,
                   suffixIcon: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.search),
+                    icon: const Icon(Icons.search, size: 40),
                   ),
                 ),
               ),
             ),
-            Container(
-              height: 100,
-              margin: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+            const Card(
+              child: ListTile(
+                title: Text(
+                  'Limpar a casa',
+                ),
+                style: ListTileStyle.drawer,
               ),
             ),
           ],
