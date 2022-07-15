@@ -1,5 +1,4 @@
 import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
-import 'package:app_todo_lovepeople/view/prancheta5_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,14 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'lista de tarefas',
-      initialRoute: '/list',
-      routes: {
-        '/list': (context) => const ListPage(),
-        '/createTask':(context) => CreateTask(),
-      },
+      home: ListPage(),
     );
   }
 }
