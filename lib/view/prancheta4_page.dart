@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -172,6 +173,7 @@ class _ListPageState extends State<ListPage> {
               ),
             ),
             trailing: IconButton(
+              iconSize: 40,
               onPressed: () {
                 showDialog(
                   context: context,
@@ -218,7 +220,7 @@ class _ListPageState extends State<ListPage> {
                 );
               },
               icon: const Icon(
-                Icons.delete,
+                CupertinoIcons.trash,
                 color: Color.fromARGB(255, 49, 1, 185),
               ),
             ),
