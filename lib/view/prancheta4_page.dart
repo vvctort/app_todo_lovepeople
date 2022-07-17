@@ -9,6 +9,7 @@ class ListPage extends StatefulWidget {
 
 class _ListPageState extends State<ListPage> {
   List<String> taskList = [];
+  String taskTitle = 'Limpar a casa';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,13 +123,15 @@ class _ListPageState extends State<ListPage> {
                   Row(
                     children: [
                       const SizedBox(
-                        width: 145,
+                        width: 150,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        iconSize: 90,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/form');
+                        },
                         icon: const Icon(
                           Icons.add,
-                          size: 90,
                           color: Colors.white,
                         ),
                       ),
@@ -153,9 +156,9 @@ class _ListPageState extends State<ListPage> {
         color: text,
         child: Center(
           child: ListTile(
-            title: const Text(
-              'Limpar a casa',
-              style: TextStyle(
+            title: Text(
+              taskTitle,
+              style: const TextStyle(
                   fontFamily: 'Montserrat-SemiBold',
                   color: Color.fromARGB(255, 49, 1, 185),
                   fontSize: 20),
@@ -169,7 +172,51 @@ class _ListPageState extends State<ListPage> {
               ),
             ),
             trailing: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) => Padding(
+                    padding: const EdgeInsets.only(bottom: 360, top: 200),
+                    child: AlertDialog(
+                      insetPadding: const EdgeInsets.all(10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      title: const Text(
+                        'Deseja deletar este item?',
+                        style: TextStyle(
+                            fontFamily: 'MontSerrat-Semibold',
+                            color: Color.fromARGB(255, 49, 1, 185)),
+                      ),
+                      content: Text(
+                        "\"$taskTitle\" sera movido para lixeira",
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 49, 1, 185)),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Confirmar',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 49, 1, 185)),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'Cancelar',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 169, 1, 247)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
               icon: const Icon(
                 Icons.delete,
                 color: Color.fromARGB(255, 49, 1, 185),
