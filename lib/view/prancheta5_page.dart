@@ -8,8 +8,6 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
-  List<String> taskList = [];
-  String taskTitle = 'Limpar a casa';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
