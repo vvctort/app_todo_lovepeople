@@ -123,7 +123,7 @@ class _ListPageState extends State<ListPage> {
                   Row(
                     children: [
                       const SizedBox(
-                        width: 150,
+                        width: 143,
                       ),
                       IconButton(
                         iconSize: 90,
