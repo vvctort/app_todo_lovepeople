@@ -131,7 +131,7 @@ class _ListPageState extends State<ListPage> {
                           Navigator.pushNamed(context, '/form');
                         },
                         icon: const Icon(
-                          Icons.add,
+                          Icons.add_rounded,
                           color: Colors.white,
                         ),
                       ),

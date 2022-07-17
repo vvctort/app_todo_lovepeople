@@ -184,13 +184,13 @@ class _FormPageState extends State<FormPage> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.close, color: Colors.white),
+                  icon: const Icon(Icons.close_rounded, color: Colors.white),
                 ),
                 const SizedBox(width: 100),
                 IconButton(
                   iconSize: 80,
                   onPressed: () {},
-                  icon: const Icon(Icons.check, color: Colors.white),
+                  icon: const Icon(Icons.done_rounded, color: Colors.white),
                 ),
               ],
             ),
