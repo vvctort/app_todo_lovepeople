@@ -15,133 +15,141 @@ class _ListPageState extends State<ListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 169, 1, 247),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(left: 2, bottom: 4),
-                    width: 70,
-                    height: 70,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(100),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 2, bottom: 4),
+                  width: 70,
+                  height: 70,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(100),
+                    ),
+                  ),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset(
+                        'assets/images/logo_coruja.png',
                       ),
                     ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: SizedBox(
-                        height: 70,
-                        width: 70,
-                        child: Image.asset(
-                          'assets/images/logo_coruja.png',
-                        ),
-                      ),
-                    ),
+                  ),
 
-                    // child: Image.asset(
-                    //   'assets/images/logo_coruja.png',
-                    //   width: 120,
-                    //   height: 120,
-                    // ),
-                  ),
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  Column(
-                    children: const [
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        'Suas listagens',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontFamily: 'Montserrat-SemiBold',
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 14),
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14),
+                  // child: Image.asset(
+                  //   'assets/images/logo_coruja.png',
+                  //   width: 120,
+                  //   height: 120,
+                  // ),
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    iconColor: const Color.fromARGB(255, 49, 1, 185),
-                    labelStyle:
-                        const TextStyle(color: Color.fromARGB(255, 49, 1, 185)),
-                    labelText: 'Busque palavras-chave',
-                    border: InputBorder.none,
-                    suffixIcon: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.search,
-                        size: 35,
-                        color: Color.fromARGB(255, 49, 1, 185),
+                const SizedBox(
+                  width: 35,
+                ),
+                Column(
+                  children: const [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      'Suas listagens',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontFamily: 'Montserrat-SemiBold',
                       ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 14),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  iconColor: const Color.fromARGB(255, 49, 1, 185),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 49, 1, 185)),
+                  labelText: 'Busque palavras-chave',
+                  border: InputBorder.none,
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.search,
+                      size: 35,
+                      color: Color.fromARGB(255, 49, 1, 185),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              // ListView.builder(
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            // ListView.builder(
 
-              //     itemCount: taskList.length,
-              //     itemBuilder: (context, index) {
-              //       return Text(taskList[index]);
-              //     }),
-              taskCard(const Color.fromARGB(255, 255, 242, 204)),
-              const SizedBox(
-                height: 20,
-              ),
-              taskCard(const Color.fromARGB(255, 199, 255, 203)),
-              const SizedBox(
-                height: 20,
-              ),
-              taskCard(const Color.fromARGB(255, 232, 197, 255)),
-              Column(
+            //     itemCount: taskList.length,
+            //     itemBuilder: (context, index) {
+            //       return Text(taskList[index]);
+            //     }),
+            Expanded(
+              child: ListView(
                 children: [
+                  taskCard(const Color.fromARGB(255, 255, 242, 204)),
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 143,
-                      ),
-                      IconButton(
-                        iconSize: 90,
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/form');
-                        },
-                        icon: const Icon(
-                          Icons.add_rounded,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+                  taskCard(const Color.fromARGB(255, 199, 255, 203)),
+                  const SizedBox(
+                    height: 20,
                   ),
+                  taskCard(const Color.fromARGB(255, 232, 197, 255)),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  taskCard(const Color.fromARGB(255, 199, 255, 203)),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  taskCard(const Color.fromARGB(255, 232, 197, 255)),
                 ],
               ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 143,
+                ),
+                IconButton(
+                  iconSize: 90,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/form');
+                  },
+                  icon: const Icon(
+                    Icons.add_rounded,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
