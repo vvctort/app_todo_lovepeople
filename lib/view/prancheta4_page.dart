@@ -130,7 +130,7 @@ class _ListPageState extends State<ListPage> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 5,
             ),
             Row(
               children: [
