@@ -1,5 +1,6 @@
 import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
 import 'package:flutter/material.dart';
+import 'package:app_todo_lovepeople/view/prancheta3_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'lista de tarefas',
-      home: ListPage(),
+      home: SingInPage(),
     );
   }
 }
