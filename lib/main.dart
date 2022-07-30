@@ -1,4 +1,5 @@
-import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
+
+import 'package:app_todo_lovepeople/view/tela_login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'lista de tarefas',
-      home: ListPage(),
+      home: LoginPage(),
     );
   }
 }
