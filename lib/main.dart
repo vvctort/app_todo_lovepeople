@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 import 'package:app_todo_lovepeople/view/prancheta2_page.dart';
+=======
+
+>>>>>>> master
 import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
 import 'package:app_todo_lovepeople/view/prancheta5_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> master
   runApp(MyApp());
 }
 
@@ -19,8 +27,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/list',
       onGenerateRoute: (settings) {
         switch (settings.name) {
+<<<<<<< HEAD
           case '/cadastro':
             return MaterialPageRoute(builder: (context) => const Cadastro());
+=======
+>>>>>>> master
           case '/list':
             return MaterialPageRoute(builder: (context) => const ListPage());
           case '/form':
