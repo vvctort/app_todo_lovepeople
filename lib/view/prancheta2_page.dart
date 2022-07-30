@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class cadastro extends StatefulWidget {
-  const cadastro({Key? key}) : super(key: key);
+class Cadastro extends StatefulWidget {
+  const Cadastro({Key? key}) : super(key: key);
 
   @override
-  State<cadastro> createState() => _cadastroState();
+  State<Cadastro> createState() => _CadastroState();
 }
 
-class _cadastroState extends State<cadastro> {
+class _CadastroState extends State<Cadastro> {
   final _formKey = GlobalKey<FormState>();
   final _nomeController = TextEditingController();
   final _emailController = TextEditingController();
@@ -244,14 +243,5 @@ class _cadastroState extends State<cadastro> {
         ),
       ),
     );
-  }
-
-  Future<bool> verificarToken() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    if (sharedPreferences.getString('token') != null) {
-      return true;
-    } else {
-      return false;
-    }
   }
 }
