@@ -1,8 +1,11 @@
 import 'package:app_todo_lovepeople/view/prancheta2_page.dart';
+import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
+import 'package:app_todo_lovepeople/view/prancheta5_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,9 +13,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: cadastro(),
+      title: 'lista de tarefas',
+      initialRoute: '/list',
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/cadastro':
+            return MaterialPageRoute(builder: (context) => const Cadastro());
+          case '/list':
+            return MaterialPageRoute(builder: (context) => const ListPage());
+          case '/form':
+            return MaterialPageRoute(builder: (context) => const FormPage());
+        }
+        return null;
+      },
     );
   }
 }
