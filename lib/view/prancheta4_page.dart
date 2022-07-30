@@ -9,8 +9,8 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  List<String> taskList = [];
   String taskTitle = 'Limpar a casa';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,31 +106,19 @@ class _ListPageState extends State<ListPage> {
             //     itemBuilder: (context, index) {
             //       return Text(taskList[index]);
             //     }),
+
             Expanded(
               child: ListView(
                 children: [
-                  taskCard(const Color.fromARGB(255, 255, 242, 204)),
-                  const SizedBox(
-                    height: 20,
+                  taskCard(
+                    const Color.fromARGB(255, 49, 1, 185),
                   ),
-                  taskCard(const Color.fromARGB(255, 199, 255, 203)),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  taskCard(const Color.fromARGB(255, 232, 197, 255)),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  taskCard(const Color.fromARGB(255, 199, 255, 203)),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  taskCard(const Color.fromARGB(255, 232, 197, 255)),
                 ],
               ),
             ),
+
             const SizedBox(
-              height: 5,
+              height: 20,
             ),
             Row(
               children: [
