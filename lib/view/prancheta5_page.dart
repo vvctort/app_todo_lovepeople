@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import 'package:flutter/material.dart';
 
 class FormPage extends StatefulWidget {
@@ -278,4 +276,3 @@ class _FormPageState extends State<FormPage> {
     }
   }
 }
->>>>>>> master
