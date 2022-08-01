@@ -1,3 +1,5 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -8,136 +10,135 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  List<String> taskList = [];
+  String taskTitle = 'Limpar a casa';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 169, 1, 247),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(left: 2, bottom: 4),
-                    width: 70,
-                    height: 70,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(100),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(left: 2, bottom: 4),
+                  width: 70,
+                  height: 70,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(100),
+                    ),
+                  ),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: SizedBox(
+                      height: 70,
+                      width: 70,
+                      child: Image.asset(
+                        'assets/images/logo_coruja.png',
                       ),
                     ),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: SizedBox(
-                        height: 70,
-                        width: 70,
-                        child: Image.asset(
-                          'assets/images/logo_coruja.png',
-                        ),
-                      ),
-                    ),
+                  ),
 
-                    // child: Image.asset(
-                    //   'assets/images/logo_coruja.png',
-                    //   width: 120,
-                    //   height: 120,
-                    // ),
-                  ),
-                  const SizedBox(
-                    width: 35,
-                  ),
-                  Column(
-                    children: const [
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Text(
-                        'Suas listagens',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontFamily: 'Montserrat-SemiBold',
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 14),
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14),
+                  // child: Image.asset(
+                  //   'assets/images/logo_coruja.png',
+                  //   width: 120,
+                  //   height: 120,
+                  // ),
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    iconColor: const Color.fromARGB(255, 49, 1, 185),
-                    labelStyle:
-                        const TextStyle(color: Color.fromARGB(255, 49, 1, 185)),
-                    labelText: 'Busque palavras-chave',
-                    border: InputBorder.none,
-                    suffixIcon: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.search,
-                        size: 35,
-                        color: Color.fromARGB(255, 49, 1, 185),
+                const SizedBox(
+                  width: 35,
+                ),
+                Column(
+                  children: const [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      'Suas listagens',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontFamily: 'Montserrat-SemiBold',
                       ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 14),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  iconColor: const Color.fromARGB(255, 49, 1, 185),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 49, 1, 185)),
+                  labelText: 'Busque palavras-chave',
+                  border: InputBorder.none,
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.search,
+                      size: 35,
+                      color: Color.fromARGB(255, 49, 1, 185),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              // ListView.builder(
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            // ListView.builder(
 
-              //     itemCount: taskList.length,
-              //     itemBuilder: (context, index) {
-              //       return Text(taskList[index]);
-              //     }),
-              taskCard(const Color.fromARGB(255, 255, 242, 204)),
-              const SizedBox(
-                height: 20,
-              ),
-              taskCard(const Color.fromARGB(255, 199, 255, 203)),
-              const SizedBox(
-                height: 20,
-              ),
-              taskCard(const Color.fromARGB(255, 232, 197, 255)),
-              Column(
+            //     itemCount: taskList.length,
+            //     itemBuilder: (context, index) {
+            //       return Text(taskList[index]);
+            //     }),
+
+            Expanded(
+              child: ListView(
                 children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      const SizedBox(
-                        width: 145,
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.add,
-                          size: 90,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+                  taskCard(
+                    const Color.fromARGB(255, 49, 1, 185),
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 143,
+                ),
+                IconButton(
+                  iconSize: 90,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/form');
+                  },
+                  icon: const Icon(
+                    Icons.add_rounded,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -153,9 +154,9 @@ class _ListPageState extends State<ListPage> {
         color: text,
         child: Center(
           child: ListTile(
-            title: const Text(
-              'Limpar a casa',
-              style: TextStyle(
+            title: Text(
+              taskTitle,
+              style: const TextStyle(
                   fontFamily: 'Montserrat-SemiBold',
                   color: Color.fromARGB(255, 49, 1, 185),
                   fontSize: 20),
@@ -169,9 +170,54 @@ class _ListPageState extends State<ListPage> {
               ),
             ),
             trailing: IconButton(
-              onPressed: () {},
+              iconSize: 40,
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) => Padding(
+                    padding: const EdgeInsets.only(bottom: 360, top: 200),
+                    child: AlertDialog(
+                      insetPadding: const EdgeInsets.all(10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      title: const Text(
+                        'Deseja deletar este item?',
+                        style: TextStyle(
+                            fontFamily: 'MontSerrat-Semibold',
+                            color: Color.fromARGB(255, 49, 1, 185)),
+                      ),
+                      content: Text(
+                        "\"$taskTitle\" sera movido para lixeira",
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 49, 1, 185)),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Confirmar',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 49, 1, 185)),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            'Cancelar',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 169, 1, 247)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
               icon: const Icon(
-                Icons.delete,
+                CupertinoIcons.trash,
                 color: Color.fromARGB(255, 49, 1, 185),
               ),
             ),
@@ -181,3 +227,23 @@ class _ListPageState extends State<ListPage> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

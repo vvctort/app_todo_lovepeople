@@ -26,7 +26,9 @@ class SingInPage extends StatelessWidget {
               height: 30,
             ),
             GestureDetector(
-                onTap: (() {}),
+                onTap: (() {
+                  Navigator.of(context).pushReplacementNamed('list');
+                }),
                 child: Container(
                   padding: EdgeInsets.only(top: 2.5),
                   child: Text('Começar',
