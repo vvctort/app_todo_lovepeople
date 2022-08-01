@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-
 import 'package:app_todo_lovepeople/view/tela_login.dart';
-=======
-import 'package:app_todo_lovepeople/view/prancheta2_page.dart';
-
 import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
 import 'package:app_todo_lovepeople/view/prancheta5_page.dart';
->>>>>>> master
 import 'package:flutter/material.dart';
 
 void main() {
- 
   runApp(const MyApp());
 }
 
@@ -22,14 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'lista de tarefas',
-<<<<<<< HEAD
-      home: LoginPage(),
-=======
       initialRoute: '/cadastro',
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/cadastro':
-            return MaterialPageRoute(builder: (context) => const Cadastro());
+            return MaterialPageRoute(builder: (context) => const LoginPage());
           case '/list':
             return MaterialPageRoute(builder: (context) => const ListPage());
           case '/form':
@@ -37,7 +27,6 @@ class MyApp extends StatelessWidget {
         }
         return null;
       },
->>>>>>> master
     );
   }
 }
