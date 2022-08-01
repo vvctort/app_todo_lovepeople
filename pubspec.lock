@@ -93,6 +93,8 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
+=======
   http:
     dependency: "direct main"
     description:
@@ -107,6 +109,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
+>>>>>>> master
   js:
     dependency: transitive
     description:
