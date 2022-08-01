@@ -187,6 +187,9 @@ class _CadastroState extends State<Cadastro> {
                       currentFocus.unfocus();
                     }
                   }
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.pushReplacementNamed(context, '/login');
+                  }
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
@@ -230,7 +233,9 @@ class _CadastroState extends State<Cadastro> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
                     child: const Text(
                       'Entrar',
                       style: TextStyle(color: Colors.orange, fontSize: 16),

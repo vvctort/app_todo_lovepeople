@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'lista de tarefas',
-      initialRoute: '/cadastro',
+      initialRoute: '/login',
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/login':
