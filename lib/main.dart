@@ -1,4 +1,6 @@
 import 'package:app_todo_lovepeople/view/tela_login.dart';
+import 'package:app_todo_lovepeople/view/prancheta2_page.dart';
+
 import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
 import 'package:app_todo_lovepeople/view/prancheta5_page.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +20,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/cadastro',
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/cadastro':
+          case '/login':
             return MaterialPageRoute(builder: (context) => const LoginPage());
+          case '/cadastro':
+            return MaterialPageRoute(builder: (context) => const Cadastro());
           case '/list':
             return MaterialPageRoute(builder: (context) => const ListPage());
           case '/form':
