@@ -10,7 +10,7 @@ class SingInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 169, 1, 247),
+        backgroundColor: const Color.fromARGB(255, 169, 1, 247),
         body: Center(
           child: Container(
               child:
@@ -27,26 +27,26 @@ class SingInPage extends StatelessWidget {
             ),
             GestureDetector(
                 onTap: (() {
-                  Navigator.of(context).pushReplacementNamed('list');
+                  Navigator.of(context).pushReplacementNamed('/list');
                 }),
                 child: Container(
-                  padding: EdgeInsets.only(top: 2.5),
-                  child: Text('Começar',
+                  padding: const EdgeInsets.only(top: 2.5),
+                  width: 130,
+                  height: 30,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 49, 1, 185),
+                      border: Border.all(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Text('Começar',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                           fontFamily: 'Montserrat-SemiBold'),
                       textAlign: TextAlign.center),
-                  width: 130,
-                  height: 30,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 49, 1, 185),
-                      border: Border.all(
-                        color: Colors.white,
-                      ),
-                      borderRadius: BorderRadius.circular(10)),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 160,
             ),
             Container(
@@ -67,7 +67,7 @@ class SingInPage extends StatelessWidget {
                       'assets/images/coruja_voando.png',
                       height: 170,
                     ),
-                    Text(
+                    const Text(
                       'Os ventos da programação estão indo até você',
                       style: TextStyle(
                           color: Color.fromARGB(255, 49, 1, 185),
