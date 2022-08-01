@@ -1,3 +1,1 @@
-class TodoApi{
-
-}
+class ApiTodo{}
