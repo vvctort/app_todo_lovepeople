@@ -1,9 +1,12 @@
+import 'package:app_todo_lovepeople/model/api/api_repository.dart';
+import 'package:app_todo_lovepeople/presenter/registerTodo_presenter.dart';
 import 'package:app_todo_lovepeople/view/tela_login.dart';
 import 'package:app_todo_lovepeople/view/prancheta2_page.dart';
 import 'package:app_todo_lovepeople/view/prancheta4_page.dart';
 import 'package:app_todo_lovepeople/view/prancheta5_page.dart';
 import 'package:app_todo_lovepeople/view/prancheta3_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
