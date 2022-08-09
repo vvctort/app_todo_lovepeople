@@ -11,7 +11,9 @@ class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
   final _formKey = GlobalKey<FormState>();
-  TextEditingController emailController = TextEditingController();
+  final _confirmeLogin = TextEditingController();
+  final _confirmeController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -84,11 +86,15 @@ class _LoginPageState extends State<LoginPage> {
                           onChanged: (text) {
                             email = text;
                           },
-                          controller: emailController,
+                          controller: _emailController,
                           validator: (value) {
                             if (value!.trim().isEmpty) {
                               return 'campo em branco';
-                            }
+                            } else if (!RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        .hasMatch(_emailController.text)){
+                            return 'digite um email valido';
+                        }
                             return null;
                           },
                           keyboardType: TextInputType.emailAddress,
@@ -124,6 +130,15 @@ class _LoginPageState extends State<LoginPage> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20))),
                               suffixIcon: Icon(Icons.remove_red_eye)),
+                              controller: _confirmeController, 
+                              keyboardType: TextInputType.text,
+                              validator: (senha){
+                                if(senha == null || senha.isEmpty) {
+                                  return 'confirme sua senha'; 
+                                } else if(senha.length<6){
+                                  return 'digite uma senha com mais de 6 digitos';
+                                } return null;
+                              },
                         ),
                       ),
                     ],
